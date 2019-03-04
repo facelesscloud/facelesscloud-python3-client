@@ -14,6 +14,7 @@ setup(
     author="Faceless Cloud",
     packages=find_packages(),
     long_description=long_description,
+    url="https://github.com/facelesscloud/facelesscloud-python3-client.git",
     install_requires=[
         'requests>',
         'pyqrcode',
