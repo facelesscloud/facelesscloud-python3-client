@@ -1,0 +1,347 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to facelesscloud’s documentation! &#8212; Facelesscloud Client 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-facelesscloud-s-documentation">
+<h1>Welcome to facelesscloud’s documentation!<a class="headerlink" href="#welcome-to-facelesscloud-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>USE THE CRYPTOCURRENCY THAT YOU LIKE, TO CREATE AND DEPLOY VPS INFRASTRUCTURE, ANONYMOUSLY.</p>
+<p>Look how easy it is to use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">facelesscloud</span>
+
+<span class="n">facelesscloud</span> <span class="n">makeconf</span>
+
+<span class="n">facelesscloud</span> <span class="n">spawn</span> <span class="o">-</span><span class="n">c</span> <span class="n">instance</span><span class="o">-</span><span class="n">conf</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Easy making data json configuration file to spawn instances.</li>
+<li>Creating spawning request and showing QR-Code to make payment easier.</li>
+<li>Get available Operating System, Region and Instance Type from the facelesscloud API faster.</li>
+<li>Get spawned instance informations, ip, pass, etc.</li>
+<li>Extend death time of an instance.</li>
+</ul>
+<p><strong>SUGGESTION / WARNING</strong>:
+PLEASE SAVE SOMEWHERE PRECIOUS YOUR INSTANCES AND TRANSACTIONS INFORMATIONS, FOR FUTUR REFERENCE !!!</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Install facelesscloud Python3 Client by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">facelesscloud</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="subcommand">
+<h2>Subcommand<a class="headerlink" href="#subcommand" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>facelesscloud –help::</dt>
+<dd><dl class="first last docutils">
+<dt>usage: facelesscloud [-h]</dt>
+<dd>{get_region,get_os,get_flavor,makeconf,spawn,status,extend}
+…</dd>
+<dt>Subcommands:</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>get_region</dt>
+<dd>Return all available Region.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>get_os</dt>
+<dd>Return all available Operating System.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>get_flavor</dt>
+<dd>Return all available Flavor.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>makeconf</dt>
+<dd>Step by step make config file helper.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>spawn</dt>
+<dd>Instance Spawing function.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>status</dt>
+<dd>Get Instance/Transaction Status. Returning instance info (IP, Password, etc), if ready</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>extend</dt>
+<dd>Instance extend function.</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="get-operating-system">
+<h2>Get Operating System<a class="headerlink" href="#get-operating-system" title="Permalink to this headline">¶</a></h2>
+<p>Return a JSON object with all available OS informations and theirs IDs.</p>
+<p>Command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="n">get_os</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-flavor">
+<h2>Get Flavor<a class="headerlink" href="#get-flavor" title="Permalink to this headline">¶</a></h2>
+<p>Return a JSON object with all available instance flavors informations and theirs IDs.</p>
+<p>Command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="n">get_flavor</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-region">
+<h2>Get Region<a class="headerlink" href="#get-region" title="Permalink to this headline">¶</a></h2>
+<p>Return a JSON object with all available region cities informations and theirs IDs.</p>
+<p>Command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="n">get_region</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-config-file">
+<h2>Make Config File<a class="headerlink" href="#make-config-file" title="Permalink to this headline">¶</a></h2>
+<p>Simply use the following command and reply the question:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="n">makeconf</span>
+</pre></div>
+</div>
+<p><strong>ARGUMENTS</strong> –:</p>
+<dl class="docutils">
+<dt><strong>Path of config file</strong>:</dt>
+<dd><p class="first">Please enter the path you wan to save the instance data, for futur spawn request.</p>
+<blockquote class="last">
+<div><em>(Example: /home/USER/instance.json)</em></div></blockquote>
+</dd>
+<dt><strong>Instance leaving time in Hours</strong>:</dt>
+<dd><p class="first">Enter how long you want the instance to leave in hours.</p>
+<blockquote class="last">
+<div><em>(Example: 48)</em></div></blockquote>
+</dd>
+<dt><strong>Instance Flavor ID</strong>:</dt>
+<dd><p class="first">Please refer to “get_flavor” subcommand to get flavor IDs.</p>
+<blockquote class="last">
+<div><em>(Example: 201) 201=(CPU:1, MEM:1gb, SSD:25gb)</em></div></blockquote>
+</dd>
+<dt><strong>Operating System ID</strong>:</dt>
+<dd><p class="first">Please refer to “get_os” subcommand to get OS (operating system) IDs.</p>
+<blockquote class="last">
+<div><em>(Example: 167) 167=(CentOS 7 64bits)</em></div></blockquote>
+</dd>
+<dt><strong>Region, where to deploy the instance</strong>:</dt>
+<dd><p class="first">A list/Dict will be generated automatically, from the server. This list will depend of which instance flavor you selected before. Enter the number of the city that you want to deploy your instance.</p>
+<blockquote class="last">
+<div><em>(Example of a Dict generated by the API: {1: ‘New Jersey’, 2: ‘Chicago’, 3: ‘Dallas’, 4: ‘Seattle’, 5: ‘Los Angeles’, 6: ‘Atlanta’, 7: ‘Amsterdam’, 8: ‘London’, 9: ‘Frankfurt’, 10: ‘Silicon Valley’, 11: ‘Sydney’, 12: ‘Toronto’, 13: ‘Paris’, 14: ‘Tokyo’, 15: ‘Miami’, 16: ‘Singapore’})</em></div></blockquote>
+</dd>
+<dt><strong>SSH Public Key Path</strong>:</dt>
+<dd><p class="first">Optional, Enter the path of the public ssh-key that you want to upload to the server when the instance start. If a wrong format of the ssh key was read, you will be advised. Leave it blank if you don’t want to upload any ssh key.</p>
+<blockquote class="last">
+<div><em>(Example: /home/USER/.ssh/id_rsa.pub)</em></div></blockquote>
+</dd>
+<dt><strong>Kick Start Bash Script</strong>:</dt>
+<dd><p class="first">Optional, Enter the path of your BASH script. Please use bash format only.
+The script will be read and POST to the API. The script will run when the instance is created. Leave it blank if you don’t want to upload any bash kickstart script.</p>
+<blockquote class="last">
+<div><em>(Example: /home/USER/path_to_your_script/kickstart.sh)</em></div></blockquote>
+</dd>
+</dl>
+</div>
+<div class="section" id="spawn-instance">
+<h2>Spawn Instance<a class="headerlink" href="#spawn-instance" title="Permalink to this headline">¶</a></h2>
+<p>Simply use the following command for more informations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="n">spawn</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>To spawn an instance using the configuration file made with “makeconf” subcommand, use the “–configfile” argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="n">spawn</span> <span class="o">--</span><span class="n">configfile</span> <span class="n">path_to_conf_file</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>Or use arguments to spawn directly an instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="o">--</span><span class="n">time</span> <span class="mi">24</span> <span class="o">--</span><span class="n">flavor</span> <span class="mi">201</span> <span class="o">--</span><span class="n">operating_system</span> <span class="mi">167</span> <span class="o">--</span><span class="n">region</span> <span class="mi">1</span> <span class="o">--</span><span class="n">sshkey</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">USER</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span> <span class="o">--</span><span class="n">kickstart</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">USER</span><span class="o">/</span><span class="n">kick</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p><strong>RETURN</strong></p>
+<p>The command will return Transaction information to proceed. A QR code, reception Bitcoin address, and the currency ammount will be generated and printed to you.
+Please follow the instruction and use the subcommand <strong>facelesscloud status –transaction_id</strong> with the provided transaction ID as “–transaction_id” argument to see status of your transaction. Refer to “Get instance and transaction status” section for more informmation.</p>
+<p><strong>SUGGESTION</strong>:
+PLEASE SAVE SOMEWHERE PRECIOUS YOUR INSTANCES AND TRANSACTIONS INFORMATIONS, FOR FUTUR REFERENCE !!!</p>
+<p><strong>ARGUMENTS</strong> –:</p>
+<p><strong>–configfile</strong>:</p>
+<p>Path of the config File. You can generate one with the subcommand “makeconf”.</p>
+<p><strong>–time</strong>:</p>
+<p>Instance life time in hours. Default 24.</p>
+<p><strong>–operating_system</strong>:</p>
+<p>Operating System ID. Default (167) CentOS 7. Please refer to “get_os” subcommand.</p>
+<p><strong>–region</strong>:</p>
+<p>Region location ID. Default (1) New Jersey. Please refer to “get_region” subcommand.</p>
+<p><strong>–flavor</strong>:</p>
+<p>Instance Flavor ID. Default (201). CPU:1, MEM:1gb, SSD:25gb. Please refer to “get_flavor” subcommand.</p>
+<p><strong>–kickstart</strong>:</p>
+<p>Optional, kickstart Bash Script path to execute at the instance startup.</p>
+<p><strong>–sshkey</strong>:</p>
+<p>Opional, Public SSH Key file path.</p>
+<p><strong>–force</strong>:</p>
+<p>Ignore parameters checker if True and force sending spawn data. WARN, if True, this will not prompt any confirmation before sending data. Can be used in a script easier.</p>
+</div>
+<div class="section" id="get-instance-and-transaction-status">
+<h2>Get instance and transaction status<a class="headerlink" href="#get-instance-and-transaction-status" title="Permalink to this headline">¶</a></h2>
+<p>You made a payment, what’s next? You can use this following command to get access to the transaction status or instance informatins, if ready. The transaction ID, provided by “spawn” command, is required as “—transaction_id” argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="n">status</span> <span class="o">--</span><span class="n">transaction_id</span> <span class="mi">47313246</span><span class="o">-</span><span class="mi">4</span><span class="n">ce4</span><span class="o">-</span><span class="mi">4</span><span class="n">ed8</span><span class="o">-</span><span class="n">b8af</span><span class="o">-</span><span class="mf">8e5</span><span class="n">dd92f2a95</span>
+</pre></div>
+</div>
+<p><strong>RETURN</strong>:</p>
+<p>This command will return Transaction status. An message with more information about the transaction will be provided. Once your instance online, you will get all informations about it. SUBID, Main IP, ROOT temporary password, instance state, etc.</p>
+<p><strong>SUGGESTION</strong>:
+PLEASE SAVE SOMEWHERE PRECIOUS YOUR INSTANCES AND TRANSACTIONS INFORMATIONS, FOR FUTUR REFERENCE !!!</p>
+<p><strong>ARGUMENTS</strong> –:</p>
+<p><strong>–transaction_id</strong>:</p>
+<p>This arguement is required. Provided by “spawn” subcommand.</p>
+<blockquote>
+<div><em>(Example of transaction ID: “47313246-4ce4-4ed8-b8af-8e5dd92f2a95”)</em></div></blockquote>
+</div>
+<div class="section" id="extend-life-of-a-leaving-instance">
+<h2>Extend life of a leaving instance<a class="headerlink" href="#extend-life-of-a-leaving-instance" title="Permalink to this headline">¶</a></h2>
+<p>You would like to renew or extend your instance life. Easy, simply use this following command.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facelesscloud</span> <span class="n">extend</span> <span class="o">--</span><span class="n">subid</span> <span class="mi">786945</span> <span class="o">--</span><span class="n">extendtime</span> <span class="mi">24</span>
+</pre></div>
+</div>
+<p><strong>RETURN</strong>:</p>
+<p>This command, like “spawn”, will return Transaction information to proceed. A QR code, reception Bitcoin address, and the currency ammount will be generated and printed to you. Please follow the instruction and use the subcommand <strong>facelesscloud status –transaction_id</strong> with the provided transaction ID as “–transaction_id” argument to see status of your transaction.
+Once payment confirmed, the instance death_time will be extended. See “status” subcommand to get new “death_time” and time extention information.
+Refer to “Get instance and transaction status” section for more informmation.</p>
+<p><strong>SUGGESTION</strong>:
+PLEASE SAVE SOMEWHERE PRECIOUS YOUR INSTANCES AND TRANSACTIONS INFORMATIONS, FOR FUTUR REFERENCE !!!</p>
+<p><strong>ARGUMENTS</strong> –:</p>
+<p><strong>–subid</strong>:
+This arguement is required. Provided by “status” subcommand. Please be sure to provided the correct SUBID. We are pretty sure that you would not like to extend another instance by mistake!</p>
+<blockquote>
+<div><em>(Example of SUBID: “786945”)</em></div></blockquote>
+<p><strong>–extendtime</strong>:
+Time in hours that you would like to extend.</p>
+</div>
+<div class="section" id="contribute">
+<h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Source Code: <a class="reference external" href="https://github.com/facelesscloud/facelesscloud-python3-client">https://github.com/facelesscloud/facelesscloud-python3-client</a></li>
+</ul>
+</div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p>If you are having issues, please let us know.
+We have a mailing list located at:</p>
+<p><a class="reference external" href="mailto:support&#37;&#52;&#48;facelesscloud&#46;com">support<span>&#64;</span>facelesscloud<span>&#46;</span>com</a></p>
+<p>Or, if you want to stay anonymous, please send us a Bitmessage at:</p>
+<p>BM-2cUxkUv1uf2ToX8oFw1CCe1iX7eMGC6XUi</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Do the fuck you want with this.</p>
+<p><a class="reference external" href="https://github.com/facelesscloud/facelesscloud-python3-client/blob/master/LICENSE.txt">https://github.com/facelesscloud/facelesscloud-python3-client/blob/master/LICENSE.txt</a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Facelesscloud Client</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Faceless Cloud.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
