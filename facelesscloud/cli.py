@@ -289,6 +289,9 @@ def spawn(
             print(convert_to_qrcode(transaction.get('Address')))
             print(Bcolors.WARNING + json.dumps(transaction, indent=4, sort_keys=True) + Bcolors.ENDC)
             print(' ')
+            print('You can now look at the transaction and instance status, using the subcommand "status" with above "Transaction_ID".')
+            print('E.G. : "facelesscloud status -i 13c3febe-ac0a-448f-9404-005b4475063e" (transaction_id)')
+            print(' ')
             return True  # For assert test.
         else:
             print(Bcolors.FAIL + 'ERROR : ' + Bcolors.ENDC + 'Something went wrong calling the server.')
@@ -335,6 +338,9 @@ def extend(subid, extendtime):
             print('---------- QR CODE ----------')
             print(convert_to_qrcode(transaction.get('Address')))
             print(Bcolors.WARNING + json.dumps(transaction, indent=4, sort_keys=True) + Bcolors.ENDC)
+            print(' ')
+            print('You can now look at the transaction and instance status, using the subcommand "status" with above "Transaction_ID".')
+            print('E.G. : "facelesscloud status -i 13c3febe-ac0a-448f-9404-005b4475063e" (transaction_id)')
             print(' ')
             return True  # For assert test.
         else:
