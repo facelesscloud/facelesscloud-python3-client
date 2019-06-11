@@ -8,7 +8,7 @@ except IOError:
 
 setup(
     name="facelesscloud",
-    version="1.1.0",
+    version="1.2.0",
     description="FacelessCloud is a client to spawn Instances/VM servers with cryptocurrency paiement method.",
     license="This is a free software. Anyone is free to copy, modify, publish, use, compile, sell or distribute this software. Do what ever the fuck you want.",
     author="Faceless Cloud",

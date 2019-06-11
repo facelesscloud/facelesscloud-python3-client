@@ -28,4 +28,4 @@ def test_sshkey():
 
 
 def test_spawn():
-    assert cli.spawn(configfile=None, time='24', flavor='201', operating_system='167', region='2', sshkey=None, kickstart=None, force=True)
+    assert cli.spawn(configfile=None, time='24', flavor='201', operating_system='167', region='2', sshkey=None, kickstart=None, force=True, currency='litecoin')

@@ -146,10 +146,11 @@ def makeconf():
     available_locations = []
     print('Hi. We will help you make a config file.')
     input('Press ENTER to continue or CTRL+C to quit.... ')
-    path = input('Please enter the path you want to save the config file. Default . (current direcoty) : ')
+    path = input('Please enter the path you want to save the config file. Default . (4nt direcoty) : ')
     time = input('How long, in hours, you would like the instance to leave? Default 24 (hours) : ')
     flavor = input('What is the Instance Flavor ID you would like to spawn? Default 201 (CPU:1, MEM:1gb, SSD:25gb) : ')
     operating_system = input('What is the Instance operating system ID you would like to install? Default 167 (CentOS 7) : ')
+    currency = input('Which currency would you like to pay with? "bitcoin, ethereum, litecoin or bitcoincash". Default (bitcoin)')
     all_flavor = api_get('flavor')
     all_os = api_get('os')
 
@@ -157,6 +158,7 @@ def makeconf():
     time = time if time else '24'
     flavor = flavor if flavor else '201'
     operating_system = operating_system if operating_system else '167'
+    currency = currency if currency else 'bitcoin'
 
     if not all_flavor.get('status') == 200 or not all_os.get('status') == 200:
         print(Bcolors.FAIL + 'ERROR: Something went wrong requesting facelesscloud server.' + Bcolors.ENDC)
@@ -197,7 +199,7 @@ def makeconf():
         print(Bcolors.FAIL + 'ERROR: SSH-KEY format is bad ! Exiting no configuration file created.' + Bcolors.ENDC)
         sys.exit(2)
 
-    conf.update({'hours_time': time, 'flavor': flavor, 'operating_system': operating_system, 'region': region_id, 'ssh_key': sshkey, 'kickstart': kickstart})
+    conf.update({'hours_time': time, 'flavor': flavor, 'operating_system': operating_system, 'region': region_id, 'ssh_key': sshkey, 'kickstart': kickstart, 'currency': currency})
     try:
         with open(path, 'w') as conf_file:
             json.dump(conf, conf_file)
@@ -217,6 +219,7 @@ def makeconf():
 @CLI_APP.cmd(help='Instance Spawing function.')
 @CLI_APP.cmd_arg('-c', '--configfile', type=str, default=None, help='Path of the config File. You can generate one with the subcommand "makeconf".')
 @CLI_APP.cmd_arg('-t', '--time', type=str, default='24', help='Instance life time in hours. Default 24')
+@CLI_APP.cmd_arg('-m', '--currency', type=str, default='bitcoin', help='Curreny that you want to use. "bitcoin, ethereum, litecoin or bitcoincash" Default bitcoin.')
 @CLI_APP.cmd_arg('-f', '--flavor', type=str, default='201', help='Instance Flavor ID. Default (201). CPU:1, MEM:1gb, SSD:25gb')
 @CLI_APP.cmd_arg('-o', '--operating_system', type=str, default='167', help='Operating System ID. Default (167) CentOS 7.')
 @CLI_APP.cmd_arg('-r', '--region', type=str, default='1', help='Region location ID. Default (1) New Jersey.')
@@ -229,6 +232,7 @@ def spawn(
         flavor,
         operating_system,
         region,
+        currency,
         sshkey,
         kickstart,
         force):
@@ -256,7 +260,8 @@ def spawn(
             'operating_system': operating_system,
             'region': region,
             'ssh_key': sshkey,
-            'kickstart': kickstart
+            'kickstart': kickstart,
+            'currency': currency
         }
 
     validation = False
@@ -317,9 +322,13 @@ def status(transaction_id):
 @CLI_APP.cmd(help='Instance extend function.')
 @CLI_APP.cmd_arg('-s', '--subid', type=str, help='ID of the running instance. SUBID.')
 @CLI_APP.cmd_arg('-t', '--extendtime', type=str, help='Time in hours that you would like to extend')
-def extend(subid, extendtime):
+@CLI_APP.cmd_arg('-m', '--currency', type=str, default='bitcoin', help='Curreny that you want to use. "bitcoin, ethereum, litecoin or bitcoincash" Default bitcoin.')
+def extend(subid, extendtime, currency):
     """ Instance subscription extend. """
-    data = {'subid': subid, 'expend_time': extendtime}
+    if not subid or not extendtime:
+        print(Bcolors.FAIL + 'Missing parameters --subid  or  --extendtime . Extend aborded...' + Bcolors.ENDC)
+        sys.exit(2)
+    data = {'subid': subid, 'expend_time': extendtime, 'currency': currency}
     api_returned_info = api_post('extend', data)
     print(api_returned_info)
 
